@@ -20,8 +20,6 @@ export class AuthController {
     const user = req.user
     const { googleId, email, profilePhoto, name } = user
 
-    console.log(user)
-
     const searchIfExistUser = await this.userService.searchOneUser(email)
 
     const payload = {
