@@ -1,3 +1,4 @@
+import { InterviewsModule } from './interviews/interviews.module'
 import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
@@ -7,8 +8,13 @@ import { secrets } from './utils/envs'
 import { UserModule } from './user/user.module'
 
 @Module({
-  imports: [AuthModule, MongooseModule.forRoot(secrets.MONGO_URI), UserModule],
+  imports: [
+    AuthModule,
+    MongooseModule.forRoot(secrets.MONGO_URI),
+    UserModule,
+    InterviewsModule
+  ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [InterviewsModule, AppService]
 })
 export class AppModule {}
