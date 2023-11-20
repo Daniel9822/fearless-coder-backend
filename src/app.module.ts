@@ -1,3 +1,4 @@
+import { IssuesModule } from './issues/issues.module'
 import { InterviewsModule } from './interviews/interviews.module'
 import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
@@ -12,9 +13,10 @@ import { UserModule } from './user/user.module'
     AuthModule,
     MongooseModule.forRoot(secrets.MONGO_URI),
     UserModule,
-    InterviewsModule
+    InterviewsModule,
+    IssuesModule
   ],
   controllers: [AppController],
-  providers: [InterviewsModule, AppService]
+  providers: [IssuesModule, InterviewsModule, AppService]
 })
 export class AppModule {}
