@@ -17,4 +17,16 @@ export class IssuesService {
     const list = await this.issue.find({})
     return list
   }
+
+  async updateItem(issue: issueDto, id: string) {
+    const update = await this.issue.findByIdAndUpdate(id, issue, {
+      new: true
+    })
+    return update
+  }
+
+  async deleteItem(id: string): Promise<issueDto> {
+    const data = await this.issue.findByIdAndDelete(id)
+    return data
+  }
 }
