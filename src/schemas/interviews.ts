@@ -9,7 +9,7 @@ export class Interview {
   @Prop()
   title: string
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Issues' })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Issue' })
   issue: mongoose.Schema.Types.ObjectId
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
