@@ -16,7 +16,7 @@ export class InterviewsService {
   }
 
   async listAll(): Promise<InterviewDocument[]> {
-    return await this.interview.find({}).populate('author')
+    return await this.interview.find({}).populate('author').populate('issue')
   }
 
   async update(id: string, interview: InterviewDto) {
