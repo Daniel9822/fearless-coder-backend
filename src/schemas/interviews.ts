@@ -14,6 +14,9 @@ export class Interview {
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   author: mongoose.Schema.Types.ObjectId
+
+  @Prop({ type: String, default: 'wait', enum: ['wait', 'current'] })
+  status: string
 }
 
 export const InterviewSchema = SchemaFactory.createForClass(Interview)
