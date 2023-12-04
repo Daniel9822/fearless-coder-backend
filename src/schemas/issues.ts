@@ -10,6 +10,9 @@ export class Issue {
 
   @Prop()
   description: string
+
+  @Prop({ type: Object, default: {} })
+  socials: object
 }
 
 export const IssuesSchema = SchemaFactory.createForClass(Issue)
